@@ -1,0 +1,70 @@
+.row {
+  padding: 6px 4px 6px 1rem;
+  margin: 4px 0; }
+
+.score-box {
+  padding-top: 12px;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+  border: 1px solid #333; }
+
+.lock {
+  margin-left: 10px;
+  border-radius: 50%; }
+
+.info-card {
+  display: grid;
+  padding: 10px;
+  background-color: #fff;
+  border: 2px solid #969696;
+  border-radius: 10px; }
+  .info-card span:first-child {
+    border-bottom: 1px solid #969696; }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+body {
+  font-family: sans-serif;
+  height: 100%; }
+
+li {
+  list-style: none; }
+
+ul {
+  display: flex; }
+
+#app-wrapper {
+  width: 800px;
+  margin: auto;
+  margin-top: 10%; }
+  #app-wrapper #score-card {
+    width: 100%;
+    padding: 1rem;
+    background-color: #eeeaea; }
+    #app-wrapper #score-card .row-red {
+      background-color: #dd3535; }
+      #app-wrapper #score-card .row-red li {
+        background-color: #ffb8b8;
+        color: #dd3535; }
+    #app-wrapper #score-card .row-yellow {
+      background-color: #f0f03d; }
+      #app-wrapper #score-card .row-yellow li {
+        background-color: #fdfde3;
+        color: #f0f03d; }
+    #app-wrapper #score-card .row-green {
+      background-color: #22aa22; }
+      #app-wrapper #score-card .row-green li {
+        background-color: #d9f8d9;
+        color: #22aa22; }
+    #app-wrapper #score-card .row-blue {
+      background-color: #2121b3; }
+      #app-wrapper #score-card .row-blue li {
+        background-color: #d2dae4;
+        color: #2121b3; }

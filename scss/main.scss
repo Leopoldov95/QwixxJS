@@ -1,0 +1,59 @@
+//imports
+@import "utilities";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: sans-serif;
+  height: 100%;
+}
+li {
+  list-style: none;
+}
+
+ul {
+  display: flex;
+}
+
+#app-wrapper {
+  width: 800px;
+  margin: auto;
+  margin-top: 10%;
+  #score-card {
+    width: 100%;
+    padding: 1rem;
+    background-color: $bg-light;
+
+    .row-red {
+      background-color: $red-primary;
+      li {
+        background-color: $red-light;
+        color: $red-primary;
+      }
+    }
+    .row-yellow {
+      background-color: $yellow-primary;
+      li {
+        background-color: $yellow-light;
+        color: $yellow-primary;
+      }
+    }
+    .row-green {
+      background-color: $green-primary;
+      li {
+        background-color: $green-light;
+        color: $green-primary;
+      }
+    }
+    .row-blue {
+      background-color: $blue-primary;
+      li {
+        background-color: $blue-light;
+        color: $blue-primary;
+      }
+    }
+  }
+}
