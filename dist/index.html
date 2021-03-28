@@ -10,7 +10,19 @@
   </head>
   <body>
     <div id="app-wrapper">
-      <div id="dice-row"></div>
+      <div class="dice-row">
+        <div>
+          <i class="die fas fa-dice-one"></i>
+          <i class="die fas fa-dice-two"></i>
+          <i class="die die-red fas fa-dice-three"></i>
+          <i class="die die-yellow fas fa-dice-four"></i>
+          <i class="die die-green fas fa-dice-five"></i>
+          <i class="die die-blue fas fa-dice-six"></i>
+        </div>
+        <div>
+          <button class="btn-roll">Roll!</button>
+        </div>
+      </div>
       <div id="score-card">
         <div class="dice-score">
           <div class="row row-red">
@@ -79,7 +91,7 @@
           </div>
         </div>
         <div class="score-info">
-          <div class="score-info-left"></div>
+          <div class="score-info-left"><span>X</span><span>Points</span></div>
           <div class="score-info-mid">
             <ul>
               <li class="info-card"><span>1X</span><span>1</span></li>
@@ -96,9 +108,37 @@
               <li class="info-card"><span>12X</span><span>78</span></li>
             </ul>
           </div>
-          <div class="score-info-right"></div>
+          <div class="score-info-right">
+            <div class="penalty-top">Penalty -5</div>
+            <div class="penalty-bottom">
+              <ul>
+                <li class="penalty-box"></li>
+                <li class="penalty-box"></li>
+                <li class="penalty-box"></li>
+                <li class="penalty-box"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="score-count">
+          <ul>
+            <li>Result:</li>
+            <li class="score-total red"></li>
+            <li><span>+</span></li>
+            <li class="score-total yellow"></li>
+            <li><span>+</span></li>
+            <li class="score-total green"></li>
+            <li><span>+</span></li>
+            <li class="score-total blue"></li>
+            <li><span>-</span></li>
+            <li class="score-total penalty"></li>
+            <li><span>=</span></li>
+            <li class="score-result"></li>
+          </ul>
         </div>
       </div>
     </div>
+    <script src="js/index.js"></script>
+    <script src="js/die.js"></script>
   </body>
 </html>

@@ -1,3 +1,28 @@
+.die-active {
+  animation: spin 500ms linear; }
+
+@keyframes spin {
+  100% {
+    transform: rotate(180deg); } }
+
+.die {
+  font-size: 5rem;
+  color: lightgray;
+  margin: 0 4px; }
+
+.btn-roll {
+  border: none;
+  outline: none;
+  padding: 4px 1rem;
+  color: #fff;
+  background-color: salmon;
+  border-radius: 10px;
+  margin-left: 2rem;
+  font-size: 1.5rem; }
+
+.btn-roll:hover {
+  background-color: #fc5542; }
+
 .row {
   padding: 6px 4px 6px 1rem;
   margin: 4px 0; }
@@ -18,12 +43,31 @@
 
 .info-card {
   display: grid;
-  padding: 10px;
+  width: 40px;
+  height: 60px;
+  text-align: center;
+  padding-top: 6px;
   background-color: #fff;
-  border: 2px solid #969696;
-  border-radius: 10px; }
+  border: 3px solid #969696;
+  border-radius: 10px;
+  margin: 0 2px;
+  font-weight: bold; }
   .info-card span:first-child {
     border-bottom: 1px solid #969696; }
+  .info-card span:last-child {
+    padding-top: 2px; }
+
+.penalty-box {
+  padding: 1rem;
+  background-color: #fff;
+  border: 3px solid #969696;
+  border-radius: 8px;
+  margin: 0 2px; }
+
+.score-total {
+  padding: 1rem 1.8rem;
+  background-color: #fff;
+  border-radius: 8px; }
 
 * {
   margin: 0;
@@ -44,27 +88,86 @@ ul {
   width: 800px;
   margin: auto;
   margin-top: 10%; }
+  #app-wrapper .dice-row {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-bottom: 1rem; }
+    #app-wrapper .dice-row .die-red {
+      color: #dd3535; }
+    #app-wrapper .dice-row .die-yellow {
+      color: #f0f03d; }
+    #app-wrapper .dice-row .die-green {
+      color: #22aa22; }
+    #app-wrapper .dice-row .die-blue {
+      color: #2121b3; }
   #app-wrapper #score-card {
     width: 100%;
-    padding: 1rem;
     background-color: #eeeaea; }
-    #app-wrapper #score-card .row-red {
-      background-color: #dd3535; }
-      #app-wrapper #score-card .row-red li {
-        background-color: #ffb8b8;
-        color: #dd3535; }
-    #app-wrapper #score-card .row-yellow {
-      background-color: #f0f03d; }
-      #app-wrapper #score-card .row-yellow li {
-        background-color: #fdfde3;
-        color: #f0f03d; }
-    #app-wrapper #score-card .row-green {
-      background-color: #22aa22; }
-      #app-wrapper #score-card .row-green li {
-        background-color: #d9f8d9;
-        color: #22aa22; }
-    #app-wrapper #score-card .row-blue {
-      background-color: #2121b3; }
-      #app-wrapper #score-card .row-blue li {
-        background-color: #d2dae4;
-        color: #2121b3; }
+    #app-wrapper #score-card .dice-score {
+      padding: 1rem 1rem 0 1rem; }
+      #app-wrapper #score-card .dice-score .row-red {
+        background-color: #dd3535; }
+        #app-wrapper #score-card .dice-score .row-red li {
+          background-color: #ffb8b8;
+          color: #dd3535; }
+      #app-wrapper #score-card .dice-score .row-yellow {
+        background-color: #f0f03d; }
+        #app-wrapper #score-card .dice-score .row-yellow li {
+          background-color: #fdfde3;
+          color: #f0f03d; }
+      #app-wrapper #score-card .dice-score .row-green {
+        background-color: #22aa22; }
+        #app-wrapper #score-card .dice-score .row-green li {
+          background-color: #d9f8d9;
+          color: #22aa22; }
+      #app-wrapper #score-card .dice-score .row-blue {
+        background-color: #2121b3; }
+        #app-wrapper #score-card .dice-score .row-blue li {
+          background-color: #d2dae4;
+          color: #2121b3; }
+    #app-wrapper #score-card .score-info {
+      display: flex;
+      justify-content: space-evenly;
+      align-content: center; }
+      #app-wrapper #score-card .score-info .score-info-left {
+        padding-top: 12px;
+        font-weight: bold;
+        text-align: center; }
+        #app-wrapper #score-card .score-info .score-info-left span {
+          display: grid; }
+        #app-wrapper #score-card .score-info .score-info-left span:first-child {
+          border-bottom: 1px solid #969696; }
+        #app-wrapper #score-card .score-info .score-info-left span:last-child {
+          padding-top: 2px; }
+      #app-wrapper #score-card .score-info .score-info-right {
+        display: grid;
+        text-align: center; }
+    #app-wrapper #score-card .score-count {
+      padding: 6px 1rem 1rem 1rem;
+      background-color: #969696;
+      margin-top: 1rem; }
+      #app-wrapper #score-card .score-count ul {
+        display: flex;
+        align-items: center;
+        font-weight: bold; }
+        #app-wrapper #score-card .score-count ul li:first-child {
+          margin-right: 1rem; }
+        #app-wrapper #score-card .score-count ul span {
+          font-size: 2.4rem;
+          margin: 0 6px; }
+        #app-wrapper #score-card .score-count ul .red {
+          border: 3px solid #dd3535; }
+        #app-wrapper #score-card .score-count ul .yellow {
+          border: 3px solid #f0f03d; }
+        #app-wrapper #score-card .score-count ul .green {
+          border: 3px solid #22aa22; }
+        #app-wrapper #score-card .score-count ul .blue {
+          border: 3px solid #2121b3; }
+        #app-wrapper #score-card .score-count ul .penalty {
+          border: 3px solid darkgray; }
+        #app-wrapper #score-card .score-count ul .score-result {
+          padding: 1rem 5rem;
+          background-color: #fff;
+          border: 3px solid black;
+          border-radius: 8px; }
