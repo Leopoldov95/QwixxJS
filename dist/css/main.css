@@ -5,6 +5,10 @@
   100% {
     transform: rotate(180deg); } }
 
+.selected {
+  transform: scale(1.2);
+  transition: ease 300ms; }
+
 .die {
   font-size: 5rem;
   color: lightgray;
@@ -65,7 +69,10 @@
   margin: 0 2px; }
 
 .score-total {
-  padding: 1rem 1.8rem;
+  text-align: center;
+  padding-top: 8px;
+  height: 40px;
+  width: 60px;
   background-color: #fff;
   border-radius: 8px; }
 
