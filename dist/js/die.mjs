@@ -1,14 +1,116 @@
-// everything related to die rolling and die number updating goes here
+class Die {
+  constructor() {
+    this.dieArr = new Array(6).fill(undefined).map((x) => this.genRandNum());
+    this.dieOne = this.dieArr[0];
+    this.dieTwo = this.dieArr[1];
+    this.dieRed = this.dieArr[2];
+    this.dieYellow = this.dieArr[3];
+    this.dieGreen = this.dieArr[4];
+    this.dieBlue = this.dieArr[5];
 
-const dieRules = {
-  diceContainer: document.querySelector(".dice-row"),
-  diceContainerGen: document.querySelector(".dice-row div"),
-  dieOne: undefined,
-  dieTwo: undefined,
-  dieRed: undefined,
-  dieYellow: undefined,
-  dieGreen: undefined,
-  dieBlue: undefined,
+    this.faceName = ["one", "two", "three", "four", "five", "six"];
+    this.diceContainer = document.querySelector(".dice-row");
+    this.diceContainerGen = document.querySelector(".dice-row div");
+    this.validScores = document.querySelector(".scores");
+  }
+
+  genRandNum() {
+    return Math.floor(Math.random() * 6);
+  }
+
+  genDice() {
+    //this.genDieNum();
+    this.diceContainerGen.innerHTML = "";
+    const div = document.createElement("div");
+    //div.classList.add('dice-row');
+    const markup = `
+            <i value=${this.dieOne + 1} class="die die-one fas fa-dice-${
+      this.faceName[this.dieOne]
+    }"></i>
+            <i value=${this.dieTwo + 1} class="die die-two fas fa-dice-${
+      this.faceName[this.dieTwo]
+    }"></i>
+            <i value=${this.dieRed + 1} class="die die-red fas fa-dice-${
+      this.faceName[this.dieRed]
+    }"></i>
+            <i value=${this.dieYellow + 1} class="die die-yellow fas fa-dice-${
+      this.faceName[this.dieYellow]
+    }"></i>
+            <i value=${this.dieGreen + 1} class="die die-green fas fa-dice-${
+      this.faceName[this.dieGreen]
+    }"></i>
+            <i value=${this.dieBlue + 1} class="die die-blue fas fa-dice-${
+      this.faceName[this.dieBlue]
+    }"></i>
+    `;
+    div.innerHTML = markup;
+    this.diceContainerGen.appendChild(div);
+  }
+
+  displayValidScores() {
+    this.validScores.innerHTML = "";
+    const div = document.createElement("div");
+    div.classList.add("scores-container");
+    //console.log(one, two, red, yellow, green, blue);
+    const markup = `
+        <div>
+           <i class='fas fa-dice-${this.faceName[this.dieOne]}'></i> +
+           <i class='fas fa-dice-${this.faceName[this.dieTwo]}'></i> = ${
+      this.dieOne + 1 + this.dieTwo + 1
+    }
+        </div>
+        <div>
+           <i class='fas fa-dice-${this.faceName[this.dieOne]}'></i> +
+           <i class='fas score-red fa-dice-${
+             this.faceName[this.dieRed]
+           }'></i>  = ${this.dieOne + 1 + this.dieRed + 1}
+        </div>
+        <div>
+           <i class='fas fa-dice-${this.faceName[this.dieOne]}'></i> +
+           <i class='fas score-yellow fa-dice-${
+             this.faceName[this.dieYellow]
+           }'></i>  = ${this.dieOne + 1 + this.dieYellow + 1}
+        </div>
+        <div>
+           <i class='fas fa-dice-${this.faceName[this.dieOne]}'></i> +
+           <i class='fas score-green fa-dice-${
+             this.faceName[this.dieGreen]
+           }'></i>  = ${this.dieOne + 1 + this.dieGreen + 1}
+        </div>
+        <div>
+           <i class='fas fa-dice-${this.faceName[this.dieOne]}'></i> +
+           <i class='fas score-blue fa-dice-${
+             this.faceName[this.dieBlue]
+           }'></i>  = ${this.dieOne + 1 + this.dieBlue + 1}
+        </div>
+        <div>
+           <i class='fas fa-dice-${this.faceName[this.dieTwo]}'></i> +
+           <i class='fas score-red fa-dice-${
+             this.faceName[this.dieRed]
+           }'></i>  = ${this.dieRed + 1 + this.dieTwo + 1}
+        </div>
+        <div>
+           <i class='fas fa-dice-${this.faceName[this.dieTwo]}'></i> +
+           <i class='fas score-yellow fa-dice-${
+             this.faceName[this.dieYellow]
+           }'></i>  = ${this.dieYellow + 1 + this.dieTwo + 1}
+        </div>
+        <div>
+           <i class='fas fa-dice-${this.faceName[this.dieTwo]}'></i> +
+           <i class='fas score-green fa-dice-${
+             this.faceName[this.dieGreen]
+           }'></i>  = ${this.dieGreen + 1 + this.dieTwo + 1}
+        </div>
+        <div>
+           <i class='fas fa-dice-${this.faceName[this.dieTwo]}'></i> +
+           <i class='fas score-blue fa-dice-${
+             this.faceName[this.dieBlue]
+           }'></i>  = ${this.dieBlue + 1 + this.dieTwo + 1}
+        </div>
+    `;
+    div.innerHTML = markup;
+    this.validScores.appendChild(div);
+  }
 
   roll() {
     for (let die of document.querySelectorAll(".die")) {
@@ -18,32 +120,7 @@ const dieRules = {
 
       die.classList.add("die-active");
     }
-  },
+  }
+}
 
-  genDieNum() {
-    this.diceContainerGen.innerHTML = "";
-    const rand = () => Math.floor(Math.random() * 6);
-    let dieArr = [rand(), rand(), rand(), rand(), rand(), rand()];
-    this.dieOne = dieArr[0] + 1;
-    this.dieTwo = dieArr[1] + 1;
-    this.dieRed = dieArr[2] + 1;
-    this.dieYellow = dieArr[3] + 1;
-    this.dieGreen = dieArr[4] + 1;
-    this.dieBlue = dieArr[5] + 1;
-    let dieNum = ["one", "two", "three", "four", "five", "six"];
-    const div = document.createElement("div");
-    //div.classList.add('dice-row');
-    const markup = `
-            <i class="die fas fa-dice-${dieNum[dieArr[0]]}"></i>
-            <i class="die fas fa-dice-${dieNum[dieArr[1]]}"></i>
-            <i class="die die-red fas fa-dice-${dieNum[dieArr[2]]}"></i>
-            <i class="die die-yellow fas fa-dice-${dieNum[dieArr[3]]}"></i>
-            <i class="die die-green fas fa-dice-${dieNum[dieArr[4]]}"></i>
-            <i class="die die-blue fas fa-dice-${dieNum[dieArr[5]]}"></i>
-    `;
-    div.innerHTML = markup;
-    this.diceContainerGen.appendChild(div);
-  },
-};
-
-export default dieRules;
+export default Die;

@@ -3,7 +3,7 @@
 
 @keyframes spin {
   100% {
-    transform: rotate(180deg); } }
+    transform: rotate(270deg); } }
 
 .selected {
   transform: scale(1.2);
@@ -12,7 +12,8 @@
 .die {
   font-size: 5rem;
   color: lightgray;
-  margin: 0 4px; }
+  margin: 0 4px;
+  transition: ease 300ms; }
 
 .btn-roll {
   border: none;
@@ -41,6 +42,9 @@
   border-radius: 8px;
   border: 1px solid #333; }
 
+.score-box:hover {
+  opacity: 0.7; }
+
 .lock {
   margin-left: 10px;
   border-radius: 50%; }
@@ -62,7 +66,11 @@
     padding-top: 2px; }
 
 .penalty-box {
-  padding: 1rem;
+  height: 40px;
+  width: 40px;
+  text-align: center;
+  font-weight: bold;
+  padding-top: 8px;
   background-color: #fff;
   border: 3px solid #969696;
   border-radius: 8px;
@@ -75,6 +83,18 @@
   width: 60px;
   background-color: #fff;
   border-radius: 8px; }
+
+.score-red {
+  color: #dd3535; }
+
+.score-yellow {
+  color: #f0f03d; }
+
+.score-green {
+  color: #22aa22; }
+
+.score-blue {
+  color: #2121b3; }
 
 * {
   margin: 0;
@@ -92,9 +112,40 @@ ul {
   display: flex; }
 
 #app-wrapper {
-  width: 800px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: auto;
   margin-top: 10%; }
+  #app-wrapper .score-table {
+    height: 450px;
+    width: 300px;
+    background-color: #969696;
+    margin-right: 6rem;
+    margin-left: -15rem;
+    padding: 1rem;
+    text-align: center;
+    border-radius: 8px; }
+    #app-wrapper .score-table h2 {
+      color: #333;
+      text-decoration: underline; }
+    #app-wrapper .score-table .helper-table {
+      line-height: 1.5;
+      background-color: #fff;
+      margin: 10px 0;
+      border: 3px solid #eeeaea;
+      border-radius: 8px; }
+    #app-wrapper .score-table .scores {
+      font-size: 1.4rem;
+      margin-top: 10px;
+      background-color: #fff;
+      border: 3px solid #eeeaea;
+      border-radius: 8px;
+      padding: 1rem; }
+      #app-wrapper .score-table .scores .scores-container {
+        text-align: left; }
+        #app-wrapper .score-table .scores .scores-container i {
+          padding: 0 6px; }
   #app-wrapper .dice-row {
     display: flex;
     justify-content: center;
@@ -174,7 +225,10 @@ ul {
         #app-wrapper #score-card .score-count ul .penalty {
           border: 3px solid darkgray; }
         #app-wrapper #score-card .score-count ul .score-result {
-          padding: 1rem 5rem;
+          width: 8rem;
+          height: 2.6rem;
+          text-align: center;
+          padding-top: 8px;
           background-color: #fff;
           border: 3px solid black;
           border-radius: 8px; }

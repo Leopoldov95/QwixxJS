@@ -16,7 +16,7 @@ $blue-light: rgb(210, 218, 228);
 
   @keyframes spin {
     100% {
-      transform: rotate(180deg);
+      transform: rotate(270deg);
     }
   }
 }
@@ -25,7 +25,6 @@ $blue-light: rgb(210, 218, 228);
 
 .selected {
   transform: scale(1.2);
-
   transition: ease 300ms;
 }
 
@@ -33,6 +32,7 @@ $blue-light: rgb(210, 218, 228);
   font-size: 5rem;
   color: lightgray;
   margin: 0 4px;
+  transition: ease 300ms;
 }
 
 .btn-roll {
@@ -65,6 +65,10 @@ $blue-light: rgb(210, 218, 228);
   border: 1px solid #333;
 }
 
+.score-box:hover {
+  opacity: 0.7;
+}
+
 .lock {
   margin-left: 10px;
   border-radius: 50%;
@@ -92,7 +96,11 @@ $blue-light: rgb(210, 218, 228);
 }
 
 .penalty-box {
-  padding: 1rem;
+  height: 40px;
+  width: 40px;
+  text-align: center;
+  font-weight: bold;
+  padding-top: 8px;
   background-color: #fff;
   border: 3px solid $bg-dark;
   border-radius: 8px;
@@ -106,4 +114,19 @@ $blue-light: rgb(210, 218, 228);
   width: 60px;
   background-color: #fff;
   border-radius: 8px;
+}
+
+// Score table display dice
+
+.score-red {
+  color: $red-primary;
+}
+.score-yellow {
+  color: $yellow-primary;
+}
+.score-green {
+  color: $green-primary;
+}
+.score-blue {
+  color: $blue-primary;
 }
