@@ -82,6 +82,9 @@
   border-radius: 8px;
   margin: 0 2px; }
 
+.penalty-box:hover {
+  background-color: #ccc; }
+
 .score-total {
   text-align: center;
   padding-top: 8px;
@@ -134,8 +137,8 @@ ul {
 
 #help-btn {
   position: absolute;
-  top: 10px;
-  right: 0;
+  top: 20px;
+  right: 20px;
   margin: 1rem;
   transition: 300ms all ease; }
   #help-btn a {

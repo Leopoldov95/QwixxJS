@@ -113,6 +113,9 @@ $blue-light: rgb(210, 218, 228);
   border-radius: 8px;
   margin: 0 2px;
 }
+.penalty-box:hover {
+  background-color: #ccc;
+}
 
 .score-total {
   text-align: center;
