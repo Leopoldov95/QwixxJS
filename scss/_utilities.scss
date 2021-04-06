@@ -16,7 +16,7 @@ $blue-light: rgb(210, 218, 228);
 
   @keyframes spin {
     100% {
-      transform: rotate(270deg);
+      transform: rotate(360deg);
     }
   }
 }
@@ -26,6 +26,7 @@ $blue-light: rgb(210, 218, 228);
 .selected {
   transform: scale(1.2);
   transition: ease 300ms;
+  opacity: 0.7;
 }
 
 .die {
@@ -35,12 +36,18 @@ $blue-light: rgb(210, 218, 228);
   transition: ease 300ms;
 }
 
+.die:hover {
+  transform: scale(1.2);
+  transition: ease 300ms;
+}
+
 .btn-roll {
   border: none;
   outline: none;
-  padding: 4px 1rem;
+  padding: 1rem 2rem;
   color: #fff;
   background-color: salmon;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   border-radius: 10px;
   margin-left: 2rem;
   font-size: 1.5rem;
@@ -129,4 +136,22 @@ $blue-light: rgb(210, 218, 228);
 }
 .score-blue {
   color: $blue-primary;
+}
+
+// game over
+.game-over {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  line-height: 6.5rem;
+  height: 320px;
+  width: 782px;
+  div {
+    text-align: center;
+    background: #fff;
+    padding: 1rem 2rem;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
 }

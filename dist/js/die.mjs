@@ -63,49 +63,65 @@ class Die {
            <i class='fas fa-dice-${this.faceName[this.dieOne]}'></i> +
            <i class='fas score-red fa-dice-${
              this.faceName[this.dieRed]
-           }'></i>  = ${this.dieOne + 1 + this.dieRed + 1}
+           }'></i>  = <span class='score-red'>${
+      this.dieOne + 1 + this.dieRed + 1
+    }</span>
         </div>
         <div>
            <i class='fas fa-dice-${this.faceName[this.dieOne]}'></i> +
            <i class='fas score-yellow fa-dice-${
              this.faceName[this.dieYellow]
-           }'></i>  = ${this.dieOne + 1 + this.dieYellow + 1}
+           }'></i>  = <span class='score-yellow'>${
+      this.dieOne + 1 + this.dieYellow + 1
+    }</span>
         </div>
         <div>
            <i class='fas fa-dice-${this.faceName[this.dieOne]}'></i> +
            <i class='fas score-green fa-dice-${
              this.faceName[this.dieGreen]
-           }'></i>  = ${this.dieOne + 1 + this.dieGreen + 1}
+           }'></i>  = <span class='score-green'>${
+      this.dieOne + 1 + this.dieGreen + 1
+    }</span>
         </div>
         <div>
            <i class='fas fa-dice-${this.faceName[this.dieOne]}'></i> +
            <i class='fas score-blue fa-dice-${
              this.faceName[this.dieBlue]
-           }'></i>  = ${this.dieOne + 1 + this.dieBlue + 1}
+           }'></i>  = <span class='score-blue'>${
+      this.dieOne + 1 + this.dieBlue + 1
+    }</span>
         </div>
         <div>
            <i class='fas fa-dice-${this.faceName[this.dieTwo]}'></i> +
            <i class='fas score-red fa-dice-${
              this.faceName[this.dieRed]
-           }'></i>  = ${this.dieRed + 1 + this.dieTwo + 1}
+           }'></i>  = <span class='score-red'>${
+      this.dieRed + 1 + this.dieTwo + 1
+    }</span>
         </div>
         <div>
            <i class='fas fa-dice-${this.faceName[this.dieTwo]}'></i> +
            <i class='fas score-yellow fa-dice-${
              this.faceName[this.dieYellow]
-           }'></i>  = ${this.dieYellow + 1 + this.dieTwo + 1}
+           }'></i>  = <span class='score-yellow'>${
+      this.dieYellow + 1 + this.dieTwo + 1
+    }</span>
         </div>
         <div>
            <i class='fas fa-dice-${this.faceName[this.dieTwo]}'></i> +
            <i class='fas score-green fa-dice-${
              this.faceName[this.dieGreen]
-           }'></i>  = ${this.dieGreen + 1 + this.dieTwo + 1}
+           }'></i>  = <span class='score-green'>${
+      this.dieGreen + 1 + this.dieTwo + 1
+    }</span>
         </div>
         <div>
            <i class='fas fa-dice-${this.faceName[this.dieTwo]}'></i> +
            <i class='fas score-blue fa-dice-${
              this.faceName[this.dieBlue]
-           }'></i>  = ${this.dieBlue + 1 + this.dieTwo + 1}
+           }'></i>  = <span class='score-blue'>${
+      this.dieBlue + 1 + this.dieTwo + 1
+    }</span>
         </div>
     `;
     div.innerHTML = markup;
