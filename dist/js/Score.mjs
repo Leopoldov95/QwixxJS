@@ -175,7 +175,7 @@ const handleScore = {
 
   checkLockOut(colorScore, score, color, rev, e) {
     if (rev === false) {
-      if (Number(e.target.textContent) === 12 && score > 15) {
+      if (Number(e.target.textContent) === 12 && score > 4) {
         e.target.nextSibling.innerHTML = "X";
         this.updateScore(colorScore, color);
         !game.lockedDieOne
@@ -184,7 +184,7 @@ const handleScore = {
       }
     }
     if (rev === true) {
-      if (Number(e.target.textContent) === 2 && score > 15) {
+      if (Number(e.target.textContent) === 2 && score > 4) {
         e.target.nextSibling.innerHTML = "X";
         this.updateScore(colorScore, color);
         !game.lockedDieOne
