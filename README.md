@@ -16,6 +16,7 @@ This app allows you to play the game of Qwixx as a single player and incorporate
 The app was created with the following technologies
 * HTML
 * CSS
+* SASS
 * javaScript
 
 ## What I Learned
