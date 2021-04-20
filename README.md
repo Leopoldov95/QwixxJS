@@ -7,7 +7,7 @@
 
 
 ## General Info
-Qwixx is a popular luck and strategy dice game played between 2 to 4 players. On this version I created a single version of the game using javaScript.
+Qwixx is a popular luck and strategy dice game played between 2 to 4 players. On this version I created a single version of the game using javaScript. The rules for the game can be found at https://www.ultraboardgames.com/qwixx/game-rules.php
 
 ## Features
 This app allows you to play the game of Qwixx as a single player and incorporates all of the game rules(such as scoring, when a player can roll, handling the game state, when a player must take a penalty score, what scores are allowed, and when the game ends).
